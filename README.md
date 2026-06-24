@@ -94,7 +94,7 @@ python main.py history
 
 ## Slack Output
 
-![Slack Post](Images/slack%20post.PNG)
+![Slack Post](Images/slackpost.PNG)
 
 
 
