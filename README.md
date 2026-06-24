@@ -1,36 +1,41 @@
-# KALKE-KORBO 
-
+# KALKE-KORBO 🤖
+> *"কালকে করব" — but the AI does it today.*
 
 An autonomous multi-agent AI system that reads your Git history and writes your daily standup report — so you don't have to.
 
 ![Demo Output](Images/result.PNG)
 
+---
 
 ## What it does
 
 Every morning, KALKE-KORBO reads your commits, scans for blockers, checks your open PRs, and generates a clean standup report. It then posts it to Slack — no input needed from you.
 
-Yesterday
+```
+✅ Yesterday
   • Implemented JWT authentication flow
   • Fixed login validation edge case
   • Refactored middleware for readability
 
- Next Steps
+🔮 Next Steps
   • Complete refresh token support (inferred from issue #42)
   • Add integration tests for auth endpoints
 
- Blockers
+🚧 Blockers
   None detected ✨
+```
 
+---
 
 ## How it works
 
 KALKE-KORBO runs a real **multi-agent ReAct loop** — not a hardcoded pipeline.
 
-
+```
 Collector Agent → Writer Agent → Critic Agent
       ↓                ↓              ↓
   data collect    report draft    quality check
+```
 
 **Collector Agent** gathers commits, diffs, GitHub context, and blockers.  
 **Writer Agent** groups related commits into logical tasks and drafts the report.  
@@ -38,6 +43,7 @@ Collector Agent → Writer Agent → Critic Agent
 
 Every run is saved to a local SQLite memory — so the next run knows what was reported last time.
 
+---
 
 ## Features
 
@@ -49,7 +55,7 @@ Every run is saved to a local SQLite memory — so the next run knows what was r
 - **Docker support** — run as a daily cron job, no local Python setup needed
 - **Fully tested** — pytest suite covering agents, memory, reflection, and tools
 
-
+---
 
 ## Installation
 
@@ -64,7 +70,9 @@ venv\Scripts\activate        # Windows
 pip install -r requirements.txt
 cp .env.example .env
 # Add your API keys to .env
+```
 
+---
 
 ## Configuration
 
@@ -72,6 +80,9 @@ cp .env.example .env
 API_KEY=your_groq_api_key          # Required — get free at console.groq.com
 MODEL_NAME=llama-3.3-70b-versatile
 SLACK_WEBHOOK_URL=your_webhook_url # Optional
+```
+
+---
 
 ## Usage
 
@@ -90,13 +101,15 @@ python main.py --post-slack
 
 # View past runs
 python main.py history
+```
 
+---
 
 ## Slack Output
 
 ![Slack Post](Images/slackpost.PNG)
 
-
+---
 
 ## Docker
 
@@ -106,9 +119,13 @@ docker-compose up
 
 # Daily cron (posts to Slack every weekday at 9am)
 docker-compose up -d standup-cron
+```
+
+---
 
 ## Project Structure
 
+```
 KALKE-KORBO/
 ├── agents/
 │   ├── collector.py     # Gathers git, GitHub, and blocker data
@@ -125,13 +142,15 @@ KALKE-KORBO/
 ├── Dockerfile
 ├── docker-compose.yml
 └── requirements.txt
+```
 
+---
 
 ## Tech Stack
 
 Python · Groq LLM · Slack API · SQLite · Docker · pytest
 
-
+---
 
 ## License
 
