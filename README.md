@@ -5,7 +5,7 @@ An autonomous multi-agent AI system that reads your Git history and writes your 
 
 ![Demo Output](Images/result.PNG)
 
----
+
 
 ## What it does
 
@@ -53,7 +53,7 @@ Every run is saved to a local SQLite memory — so the next run knows what was r
 - **Docker support** — run as a daily cron job, no local Python setup needed
 - **Fully tested** — pytest suite covering agents, memory, reflection, and tools
 
----
+
 
 ## Installation
 
@@ -70,7 +70,7 @@ cp .env.example .env
 # Add your API keys to .env
 ```
 
----
+
 
 ## Configuration
 
@@ -80,7 +80,7 @@ MODEL_NAME=llama-3.3-70b-versatile
 SLACK_WEBHOOK_URL=your_webhook_url # Optional
 ```
 
----
+
 
 ## Usage
 
@@ -101,13 +101,13 @@ python main.py --post-slack
 python main.py history
 ```
 
----
+
 
 ## Slack Output
 
 ![Slack Post](Images/slackpost.PNG)
 
----
+
 
 ## Docker
 
@@ -119,7 +119,7 @@ docker-compose up
 docker-compose up -d standup-cron
 ```
 
----
+
 
 ## Project Structure
 
@@ -148,7 +148,7 @@ KALKE-KORBO/
 
 Python · Groq LLM · Slack API · SQLite · Docker · pytest
 
----
+
 
 ## License
 
